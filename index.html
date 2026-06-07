@@ -14,7 +14,7 @@
       --rose: #b06a6a;
       --rose-dark: #9a5858;
       --cream: #f0ebe2;
-      --mauve: #5c2d2d;
+      --mauve: #512731;
       --mauve-light: #7a4040;
       --white: #faf8f5;
     }
@@ -106,16 +106,17 @@
     }
 
     .badge-oval {
-      border: 1.5px solid var(--mauve);
+      border: 3px solid var(--mauve);
       border-radius: 50%;
-      padding: 1.2rem 3rem;
+      padding: 2.7rem 4rem;
       display: inline-block;
+      box-shadow: 0 0 0 5px var(--cream), 0 0 0 8px var(--mauve);
     }
 
     .badge-oval h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      font-size: clamp(2.5rem, 3vw, 3.2rem);
       letter-spacing: 0.15em;
       color: var(--mauve);
     }
@@ -123,6 +124,11 @@
     /* ── OUR DAY ── */
     #our-day {
       background: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 6rem 2rem;
       text-align: center;
     }
@@ -130,7 +136,7 @@
     .our-day-text {
       max-width: 560px;
       margin: 0 auto;
-      font-size: 0.78rem;
+      font-size: 0.9rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       line-height: 2;
@@ -151,6 +157,11 @@
     /* ── SCHEDULE ── */
     #schedule {
       background: var(--rose);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 6rem 2rem;
       text-align: center;
       color: var(--white);
@@ -273,6 +284,9 @@
       background-size: cover;
       background-position: center;
       position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
       padding: 6rem 2rem;
       color: var(--white);
       text-align: center;
@@ -364,6 +378,11 @@
     /* ── FAQs ── */
     #faqs {
       background: var(--cream);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       padding: 6rem 2rem;
       text-align: center;
     }
@@ -411,7 +430,11 @@
       background-size: cover;
       background-position: center;
       position: relative;
-      padding: 5rem 2rem 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
       text-align: center;
       overflow: hidden;
     }
