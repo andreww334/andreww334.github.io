@@ -6,7 +6,7 @@
   <title>Rachael & Andrew</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Pinyon+Script&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Pinyon+Script&family=Montserrat:wght@300;400;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -279,8 +279,7 @@
 
     /* ── ACCOMMODATIONS ── */
     #accommodations {
-      background-color: var(--rose-dark);
-      /* Replace with: background-image: url('images/venue.jpg'); */
+      background-image: url('pavillion.jpg');
       background-size: cover;
       background-position: center;
       position: relative;
@@ -296,12 +295,17 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(140, 75, 75, 0.72);
+      background: rgba(124, 77, 89, 0.4);
     }
 
     .accommodations-inner {
       position: relative;
       z-index: 1;
+      background: rgba(150, 80, 80, 0.60);
+      padding: 3rem 4rem;
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: 20px;
       max-width: 960px;
       margin: 0 auto;
     }
@@ -315,11 +319,11 @@
     }
 
     .accommodations-intro {
-      font-size: 0.75rem;
+      font-size: 1rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       line-height: 1.9;
-      max-width: 700px;
+      max-width: 900px;
       margin: 0 auto 3rem;
       color: rgba(255,255,255,0.9);
     }
@@ -333,15 +337,16 @@
 
     .hotel h3 {
       font-family: 'Montserrat', sans-serif;
-      font-weight: 400;
-      font-size: 0.78rem;
+      font-weight: 700;       /* ← boldness: 400 = regular, 700 = bold */
+      font-size: 1rem;      /* ← hotel name size */
       letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-bottom: 0.6rem;
     }
 
     .hotel p {
-      font-size: 0.75rem;
+      font-weight:400;
+      font-size: 1rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       line-height: 1.9;
@@ -631,8 +636,7 @@
           <p class="deadline">
             Please book by <b>August 21, 2026</b> to secure this rate
           </p>
-          <a href="#" class="btn-oval">book here</a>
-          <!-- Replace # with the actual booking link -->
+          <a href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1773159775626&key=GRP&app=resvlink&_branch_match_id=1283541875220463137&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi3OyczLtgdK2ALZZSCOWmaKraG5ubGhqaW5uamZkZladmqlrXtQgFpdUWpaKlB3Xnp8UlF%2BeXFqka1zRlF%2BbioAJ6akomAAAAA%3D" class="btn-oval" target="_blank">book here</a>
         </div>
         <div class="hotel">
           <h3>Hotel at Avalon</h3>
@@ -644,8 +648,7 @@
           <p class="deadline">
             Please book by <b>August 11, 2026</b> to secure this rate
           </p>
-          <a href="#" class="btn-oval">book here</a>
-          <!-- Replace # with the actual booking link -->
+          <a href="https://book.passkey.com/go/XiongWangWedding" class="btn-oval" target="_blank">book here</a>
         </div>
       </div>
     </div>
