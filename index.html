@@ -72,13 +72,14 @@
       width: 110px;
       height: 130px;
       margin-bottom: 2.5rem;
-      filter: brightness(0) invert(1);
+      filter: invert(1);
+      mix-blend-mode: screen;
     }
 
     .wedding-of-svg {
-      width: 280px;
-      height: 75px;
-      margin-bottom: 0.25rem;
+      width: 320px;
+      height: 70px;
+      margin-bottom: 0.5rem;
     }
 
     .hero-names {
@@ -514,12 +515,12 @@
   <!-- HERO -->
   <section id="hero">
     <img class="monogram" src="R - 3.png" alt="RA monogram">
-    <svg class="wedding-of-svg" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+    <svg class="wedding-of-svg" viewBox="0 0 320 70" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <path id="arc" d="M 20,70 A 130,130 0 0,1 280,70"/>
+        <path id="arc" d="M 30,65 Q 160,10 290,65"/>
       </defs>
-      <text fill="white" font-family="'Cormorant Garamond', serif" font-size="13" letter-spacing="6">
-        <textPath href="#arc" startOffset="50%" text-anchor="middle">THE WEDDING OF</textPath>
+      <text fill="white" font-family="Cormorant Garamond, serif" font-size="12" letter-spacing="7">
+        <textPath xlink:href="#arc" href="#arc" startOffset="50%" text-anchor="middle">THE WEDDING OF</textPath>
       </text>
     </svg>
     <div class="hero-names">Rachael &amp; Andrew</div>
