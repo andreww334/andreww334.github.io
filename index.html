@@ -6,13 +6,13 @@
   <title>Rachael & Andrew</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Pinyon+Script&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --rose: #b87b7b;
-      --rose-dark: #a06868;
+      --rose: #b06a6a;
+      --rose-dark: #9a5858;
       --cream: #f0ebe2;
       --mauve: #5c2d2d;
       --mauve-light: #7a4040;
@@ -69,35 +69,20 @@
     }
 
     .monogram {
-      width: 90px;
-      height: 110px;
+      width: 110px;
+      height: 130px;
       margin-bottom: 2.5rem;
+      filter: brightness(0) invert(1);
     }
 
-    .monogram ellipse {
-      fill: none;
-      stroke: var(--white);
-      stroke-width: 1.5;
-    }
-
-    .monogram text {
-      fill: var(--white);
-      font-family: 'Great Vibes', cursive;
-      font-size: 38px;
-      text-anchor: middle;
-      dominant-baseline: middle;
-    }
-
-    .wedding-of {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
+    .wedding-of-svg {
+      width: 280px;
+      height: 75px;
+      margin-bottom: 0.25rem;
     }
 
     .hero-names {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Pinyon Script', cursive;
       font-size: clamp(3.5rem, 8vw, 6.5rem);
       line-height: 1.1;
       margin-bottom: 1.5rem;
@@ -154,7 +139,7 @@
     .our-day-text p { margin-bottom: 1.2rem; }
 
     .script-signature {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Pinyon Script', cursive;
       font-size: 2.2rem;
       text-transform: none;
       letter-spacing: 0;
@@ -255,7 +240,7 @@
     }
 
     .timeline-event {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Pinyon Script', cursive;
       font-size: 1.9rem;
       color: var(--white);
       text-align: right;
@@ -296,7 +281,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(160, 90, 90, 0.72);
+      background: rgba(140, 75, 75, 0.72);
     }
 
     .accommodations-inner {
@@ -361,7 +346,7 @@
 
     .btn-oval {
       display: inline-block;
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Pinyon Script', cursive;
       font-size: 1.4rem;
       color: var(--mauve);
       background: var(--white);
@@ -492,7 +477,7 @@
     }
 
     .footer-signature {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Pinyon Script', cursive;
       font-size: 2rem;
       color: var(--white);
       margin-bottom: 0.75rem;
@@ -528,11 +513,15 @@
 
   <!-- HERO -->
   <section id="hero">
-    <svg class="monogram" viewBox="0 0 90 110" xmlns="http://www.w3.org/2000/svg">
-      <ellipse cx="45" cy="55" rx="40" ry="50"/>
-      <text x="45" y="57">RA</text>
+    <img class="monogram" src="R - 3.png" alt="RA monogram">
+    <svg class="wedding-of-svg" viewBox="0 0 300 80" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <path id="arc" d="M 20,70 A 130,130 0 0,1 280,70"/>
+      </defs>
+      <text fill="white" font-family="'Cormorant Garamond', serif" font-size="13" letter-spacing="6">
+        <textPath href="#arc" startOffset="50%" text-anchor="middle">THE WEDDING OF</textPath>
+      </text>
     </svg>
-    <div class="wedding-of">The Wedding Of</div>
     <div class="hero-names">Rachael &amp; Andrew</div>
     <div class="hero-location">Cumming, Georgia</div>
   </section>
