@@ -8,6 +8,96 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Pinyon+Script&family=Montserrat:wght@300;400;700;800;900&family=IM+Fell+English:ital@1&family=Tangerine:wght@700&family=Great+Vibes&family=Gwendolyn:wght@700&display=swap" rel="stylesheet">
   <style>
+    #password-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--rose, #b06a6a);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    #password-gate .gate-names {
+      font-size: clamp(4rem, 9vw, 7.5rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      color: #faf8f5;
+    }
+
+    #password-gate .gate-initial {
+      font-family: 'SybarisOpti', cursive;
+      font-size: 1.2em;
+      font-weight: 400;
+      -webkit-text-stroke: 2px;
+      position: relative;
+      top: -0.05em;
+      margin-right: 0.20em;
+    }
+
+    #password-gate .gate-rest {
+      font-family: 'Pinyon Script', cursive;
+    }
+
+    #password-gate p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2rem;
+    }
+
+    #password-gate input {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      padding: 0.75rem 1.4rem;
+      border: 1px solid rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.15);
+      color: #faf8f5;
+      outline: none;
+      width: 220px;
+      text-align: center;
+    }
+
+    #password-gate input::placeholder { color: rgba(255,255,255,0.45); }
+
+    #password-gate button {
+      display: block;
+      margin: 1rem auto 0;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.8rem;
+      border: 1px solid rgba(255,255,255,0.8);
+      background: transparent;
+      color: #faf8f5;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    #password-gate button:hover { background: rgba(255,255,255,0.15); }
+
+    #password-error {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.65);
+      margin-top: 0.75rem;
+      min-height: 1em;
+    }
+
     @font-face {
       font-family: 'SybarisOpti';
       src: url('SybarisOpti.otf') format('opentype');
@@ -699,6 +789,41 @@
   </style>
 </head>
 <body>
+
+  <!-- PASSWORD GATE -->
+  <div id="password-gate">
+    <div class="gate-names"><span class="gate-initial">R</span><span class="gate-rest">achael <span class="amp">&amp;</span> Andrew</span></div>
+    <p>Enter the password to view this site</p>
+    <input type="password" id="gate-input" placeholder="Password" autocomplete="off">
+    <button onclick="checkPassword()">Enter</button>
+    <div id="password-error"></div>
+  </div>
+
+  <script>
+    const PASS_HASH = "c47f6e7aac58a9a5ce10e455f9753d8d8921e04ebb62d39063299bbe6f27a85f";
+
+    async function checkPassword() {
+      const val = document.getElementById("gate-input").value;
+      const encoded = new TextEncoder().encode(val);
+      const buf = await crypto.subtle.digest("SHA-256", encoded);
+      const hash = Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
+      if (hash === PASS_HASH) {
+        document.getElementById("password-gate").style.display = "none";
+        sessionStorage.setItem("auth", "1");
+      } else {
+        document.getElementById("password-error").textContent = "Incorrect password. Please try again.";
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      if (sessionStorage.getItem("auth") === "1") {
+        document.getElementById("password-gate").style.display = "none";
+      }
+      document.getElementById("gate-input").addEventListener("keydown", e => {
+        if (e.key === "Enter") checkPassword();
+      });
+    });
+  </script>
 
   <!-- NAV -->
   <nav>
