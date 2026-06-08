@@ -6,8 +6,13 @@
   <title>Rachael & Andrew</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Pinyon+Script&family=Montserrat:wght@300;400;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Pinyon+Script&family=Montserrat:wght@300;400;700;800;900&family=IM+Fell+English:ital@1&family=Tangerine:wght@700&family=Great+Vibes&family=Gwendolyn:wght@700&display=swap" rel="stylesheet">
   <style>
+    .amp {
+      font-family: 'Gwendolyn', cursive;
+      font-weight: 700;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
@@ -152,6 +157,48 @@
       letter-spacing: 0;
       margin-top: 0.5rem;
       color: var(--mauve);
+    }
+
+    .countdown {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .countdown-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .countdown-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 300;
+      color: var(--mauve);
+      line-height: 1;
+    }
+
+    .countdown-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      opacity: 0.6;
+    }
+
+    .countdown-divider {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 300;
+      color: var(--mauve);
+      opacity: 0.3;
+      align-self: flex-start;
+      padding-top: 0.15rem;
     }
 
     /* ── SCHEDULE ── */
@@ -326,6 +373,18 @@
       gap: 1.5rem;
       align-items: center;
       margin-top: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .rsvp-card:hover {
+      background: var(--mauve-light);
+    }
+
+    .rsvp-card-arrow {
+      font-size: 1.4rem;
+      color: rgba(255,255,255,0.7);
     }
 
     .rsvp-card-label {
@@ -634,7 +693,7 @@
         <textPath xlink:href="#arc" href="#arc" startOffset="50%" text-anchor="middle">THE WEDDING OF</textPath>
       </text>
     </svg>
-    <div class="hero-names">Rachael &amp; Andrew</div>
+    <div class="hero-names">Rachael <span class="amp">&amp;</span> Andrew</div>
     <div class="hero-location">Cumming, Georgia</div>
   </section>
 
@@ -649,6 +708,27 @@
       <p>We can't wait to celebrate with you!</p>
       <p>With love,</p>
       <div class="script-signature">Rachael and Andrew</div>
+    </div>
+    <div class="countdown">
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-days">--</span>
+        <span class="countdown-label">Days</span>
+      </div>
+      <div class="countdown-divider">·</div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-hours">--</span>
+        <span class="countdown-label">Hours</span>
+      </div>
+      <div class="countdown-divider">·</div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-minutes">--</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <div class="countdown-divider">·</div>
+      <div class="countdown-unit">
+        <span class="countdown-number" id="cd-seconds">--</span>
+        <span class="countdown-label">Seconds</span>
+      </div>
     </div>
   </section>
 
@@ -669,12 +749,13 @@
       <div class="schedule-welcome" id="schedule-welcome"></div>
       <div class="schedule-events-label">Your Events</div>
       <div class="event-cards" id="event-cards"></div>
-      <div class="rsvp-card" id="rsvp-card" style="display:none;">
-        <div>
+      <a href="#rsvp" class="rsvp-card" id="rsvp-card" style="display:none;">
+        <div style="flex:1;">
           <div class="rsvp-card-label">RSVP By</div>
           <div class="rsvp-card-date" id="rsvp-date"></div>
         </div>
-      </div>
+        <div class="rsvp-card-arrow">→</div>
+      </a>
     </div>
   </section>
 
@@ -788,7 +869,7 @@
       please get in touch<br>
       andrewandrachael.com
     </p>
-    <div class="footer-signature">Rachael &amp; Andrew</div>
+    <div class="footer-signature">Rachael <span class="amp">&amp;</span> Andrew</div>
     <div class="footer-kisses">x x x</div>
   </footer>
 
@@ -827,16 +908,16 @@
 
     const SATURDAY_EVENTS = [
       {
-        dateLabel: "Saturday September 26, 2026",
+        dateLabel: "Saturday September 12, 2026",
         time: "3:30 PM to 10:30 PM",
         name: "Ceremony and Reception",
-        venue: "Greenfield Farms · 2227 Bagley Rd, Cumming, GA 30041, USA",
+        venue: "Greenfield Farm · 2227 Bagley Rd, Cumming, GA 30041, USA",
         detail: "We're getting married! We'd like to share a few words with everyone. Dinner, drinks, and dancing to follow!"
       }
     ];
 
     const WELCOME_EVENT = {
-      dateLabel: "Friday September 25, 2026",
+      dateLabel: "Friday September 11, 2026",
       time: "7:00 PM to 10:00 PM",
       name: "Welcome Party",
       venue: "Next to PURE · 119 Roswell St, Alpharetta, GA 30009, USA",
@@ -854,7 +935,7 @@
         <div class="event-card-date-label">${ev.dateLabel.toUpperCase()}</div>
         <div class="event-card-time">${ev.time.toUpperCase()}</div>
         <div class="event-card-name">${ev.name}</div>
-        <div class="event-card-venue">📍 ${ev.venue}</div>
+        <div class="event-card-venue"><svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline;vertical-align:middle;margin-right:6px;opacity:0.75"><path d="M6 0C3.24 0 1 2.24 1 5c0 3.75 5 11 5 11s5-7.25 5-11c0-2.76-2.24-5-5-5zm0 7.5A2.5 2.5 0 1 1 6 2.5 2.5 2.5 0 0 1 6 7.5z" fill="rgba(255,255,255,0.85)"/></svg>${ev.venue}</div>
         <div class="event-card-detail">${ev.detail}</div>
       </div>`;
     }
@@ -894,6 +975,28 @@
 
       results.style.display = "block";
     }
+
+    // Countdown to September 26, 2026 3:30 PM ET
+    (function () {
+      const target = new Date("2026-09-12T15:30:00-04:00");
+      function tick() {
+        const diff = target - Date.now();
+        if (diff <= 0) {
+          ["cd-days","cd-hours","cd-minutes","cd-seconds"].forEach(id => document.getElementById(id).textContent = "0");
+          return;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        document.getElementById("cd-days").textContent    = String(d);
+        document.getElementById("cd-hours").textContent   = String(h).padStart(2,"0");
+        document.getElementById("cd-minutes").textContent = String(m).padStart(2,"0");
+        document.getElementById("cd-seconds").textContent = String(s).padStart(2,"0");
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
 
     document.getElementById("guest-name").addEventListener("keydown", e => {
       if (e.key === "Enter") lookupSchedule();
