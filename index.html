@@ -746,6 +746,42 @@
       text-underline-offset: 3px;
     }
 
+    /* ── GALLERY ── */
+    #gallery {
+      background: var(--rose);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 3rem;   /* ← gap size lever */
+      padding-bottom: 0;
+      margin: 0;
+    }
+
+    .gallery-track-wrapper {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .gallery-track {
+      display: flex;
+      gap: 0rem;
+      animation: scroll-left 50s linear infinite; /* ← speed lever: lower = faster */
+      width: max-content;
+    }
+
+    .gallery-track img {
+      height: 70vh;              /* ← image height lever */
+      width: auto;
+      object-fit: cover;
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
     /* ── FOOTER ── */
     footer {
       background: var(--rose);
@@ -1012,6 +1048,27 @@
           join us by visiting<br>
           <a href="https://withjoy.com/rachael-and-andrew-sep-26/rsvp" target="_blank">OUR RSVP PAGE</a>.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="gallery-track-wrapper">
+      <div class="gallery-track">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889998/IMG_3935_b26pme.jpg" alt="">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889997/IMG_3941_vazutw.jpg" alt="">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889996/IMG_3943_ngmxdh.jpg" alt="">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889995/IMG_3944_crh93o.jpg" alt="">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889995/IMG_3942_kdlhc0.jpg" alt="">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889993/IMG_3940_lfr085.jpg" alt="">
+        <!-- duplicated for seamless loop -->
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889998/IMG_3935_b26pme.jpg" alt="">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889997/IMG_3941_vazutw.jpg" alt="">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889996/IMG_3943_ngmxdh.jpg" alt="">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889995/IMG_3944_crh93o.jpg" alt="">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889995/IMG_3942_kdlhc0.jpg" alt="">
+        <img src="https://res.cloudinary.com/dbvu1h9nc/image/upload/v1780889993/IMG_3940_lfr085.jpg" alt="">
       </div>
     </div>
   </section>
