@@ -782,6 +782,119 @@
       100% { transform: translateX(-50%); }
     }
 
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+
+      /* Nav */
+      nav {
+        gap: 1.2rem;
+        padding: 0.8rem 1.2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        font-size: 0.75rem;
+      }
+
+      /* Hero */
+      #hero {
+        padding: 5rem 1.5rem 3rem;
+      }
+
+      .monogram {
+        width: 100px;
+        height: 100px;
+      }
+
+      .wedding-of-svg {
+        width: 260px;
+      }
+
+      .hero-names {
+        margin-bottom: 2.5rem;
+        justify-content: center;
+      }
+
+      .hero-initial {
+        font-size: 1.2em;        /* ← mobile R size lever */
+        margin-right: 0.08em;       /* ← mobile R gap lever */
+        -webkit-text-stroke: 1px;
+      }
+
+      .hero-rest {
+        margin-left: -5em;     /* ← mobile gap fix: increase magnitude to close further */
+      }
+
+      .hero-location {
+        font-size: 14px;
+        letter-spacing: 0.25em;
+      }
+
+      /* Password gate */
+      #password-gate .gate-names {
+        justify-content: center;
+      }
+
+      /* Badge ovals */
+      .badge-oval {
+        padding: 2rem 3.5rem;
+      }
+
+      /* Our Day */
+      .countdown {
+        gap: 1.2rem;
+      }
+
+      .countdown-divider {
+        display: none;
+      }
+
+      /* Schedule */
+      .schedule-results {
+        max-width: 100%;
+      }
+
+      .event-card {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .event-card-name {
+        font-size: 1.5rem;
+      }
+
+      .rsvp-card {
+        padding: 1rem 1.2rem;
+      }
+
+      /* Accommodations */
+      .accommodations-inner {
+        padding: 2rem 1.5rem;
+      }
+
+      .hotels {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      /* FAQs */
+      .faq-grid {
+        columns: 1;
+        max-width: 100%;
+      }
+
+      /* RSVP flower card */
+      .flower-card {
+        width: 90vw;
+        height: 90vw;
+      }
+
+      /* Gallery */
+      .gallery-track img {
+        height: 45vh;
+      }
+    }
+
     /* ── FOOTER ── */
     footer {
       background: var(--rose);
@@ -1100,21 +1213,152 @@
     // Guest list — keys are SHA-256 hashes of "firstname lastname" (lowercased, trimmed)
     // Each guest has: displayName, welcomeParty (boolean), rsvpDate (string)
     const GUESTS = {
-      "5157f6198dde73ec7adda0bbbc5d3b6020891833d99b05ab219e4cf87b36704f": {
-        displayName: "Alice Johnson",
-        welcomeParty: true,
-        rsvpDate: "June 12, 2026"
-      },
-      "7e50351d7a4c51161920af1a3526e79eb2bc1ab7fb29f0a3b1b8ce135bedd372": {
-        displayName: "Bob Smith",
-        welcomeParty: false,
-        rsvpDate: "July 11, 2026"
-      },
-      "c76d866a0ae183a58265b7a426e3ccebb8acf9814928a2cbc437e059e3911639": {
-        displayName: "Carol White",
-        welcomeParty: true,
-        rsvpDate: "July 25, 2026"
-      },
+      "bf0b9d3e32f432ade0940eb2d2eab155a6b0426169729dcf21f10d21da9d9b6f": { displayName: "Yee Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "51b7dece342cbbff3e7fa14bd3f316b59de8d39323315d8a0201fe652e6862e5": { displayName: "Yeng Lee Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "d252def0f26742506f2b6c001d4a61e88f6a754688681981a5623c970a6d557f": { displayName: "Kim Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "29f03c744269683fc2c584b4eceda3887613ead893d69afa0799a9e7ab1f3d5e": { displayName: "Christine Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "12897ed553af0276f3da727f18013e04d4d3e426c60403695be82a544f331e61": { displayName: "Ashton Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "d76439831ce4bb4133c5839c0700d4ef82e61b2a61392aab3ff9290ce27aa37b": { displayName: "Ella Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "3d969f6c6ba7aaacb1241c20823eb1f0c4f3bb2c059312ab30ea0a85442527f6": { displayName: "Owen Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "42335ed2f33554cbe8a7168ff9f061b9ba8e88eb3b997580e86beaec80a3277b": { displayName: "Abby Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "6df457366ac789c30080ac58e29d57b50b6770086a439f9bacbebde4010e2acd": { displayName: "Chong Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "9d2277ab0b66e2bc2a826e6c0517b8e4151d832afd6b3e435e8829faa9a00003": { displayName: "Drua Yang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "634c12481a25cffbca2976a3328c48a76dffa157983ed0b35f7a072e8484fdc5": { displayName: "Christian Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "e1d5e7a97afb21e3211a14582fe8a086944c9035338682491b742e9d3eb78bde": { displayName: "Patrick Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "496e3c7873a2f7b19cd45d32aacdb63ee7186686f48612ef37e86fd3da93b78a": { displayName: "Nicole Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "4f5e0520597b29e05b532be5a9fbc23181a8ba773260338a7a6e9a61df7f386a": { displayName: "Wyatt Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "b86c0ce8a04dc792e4b8e8724ab2172ab8faa0c68a482379028b744792de76a3": { displayName: "Winston Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "80282eb2da5a198352dfb425602761c8b5d8c4e1d904a2872d3ef4dc53586282": { displayName: "Lucy Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "929cc0d3b2c56abe185ece6e07817d8a7edaecaa53581f5e1bb885a66e9d0b8c": { displayName: "Plua Vue", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "630b2df35b032e6acb55869e3fc3ab214f7f72e4f57c9156a9c2892ec05ecdff": { displayName: "Jessica Vue", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "ed3c42b0eb5179f6a755ec192af31b55107ac0191d4649c96bc4e7ccc4f33aec": { displayName: "Alex Vue", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "26aac5217bc1b4b378bf050a69b1af1a0274d423c6686ab92626c08ff15b2d2f": { displayName: "Yer Lee", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "6c328b46f27451b29c96d7a2961e9343e4508a6cdc225882bc0497c8491d32d4": { displayName: "Yia Lee", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "b7172aa6d08634e89c6529491f60f4ab631ed0dc7f18ec5950d492164114bcd9": { displayName: "Melissa Lee", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "692ff70f67180ef09a730cc4cc87f4e84ad2d64a28db76f3d32ae76d109b9be5": { displayName: "Melissa Lee Husband", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "9060b3e9b047a23aa57cc4b3bf3235181f0da6006cd3f733d2ec8d30771dde76": { displayName: "Ming Lee", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "ce6617e11ef1bd1a6f06ee41a8853d6309c2f7a4424425bd91ca24a2efbafe0c": { displayName: "Melanie Lee", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "69c30b2ce58a674aed65a37cb781be694a8546f2bd38679dbb2ba5dddedadb6d": { displayName: "Kee Lee", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "b037f3ada89a749a55ddbfc9280b102ddc68f8c0d1323ef02c371157b7ab0ec3": { displayName: "Pheng Lee", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "02b06b822d5be997ac6dcc0385837e94405d26922e8cc2b5bb01b2bd635d8034": { displayName: "Makayla Yang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "aad9638187d7c7567a658792d7e2570c50f9532c0f27c7a2df3222a043a8aaac": { displayName: "Kevin Yang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "aabfe7b5e0d4275f522b1736c3abf97d93dfa3a363d5e8dfba15e1249f51c11c": { displayName: "Sou Lee", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "76447c70eaa2c1e97a4a205f38e923275f76fbc959e6f94da2b5cb452969a801": { displayName: "Kai Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "e7931b48bf6c52475110cce3e1d54d5339fe808d47f2dad36eb3eae3f4251b76": { displayName: "Pa Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "4fc94518000cf1c5e02f5f6f053f0a0870079a2067727af892ae45f77c9b15e6": { displayName: "William Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "9dec7a3c5412e2455cfd7eb86c05b7f724f4ab98086bb8835fb3a3066dd9d4f0": { displayName: "Elizabeth Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "3d85f5ebd27e82d956b7aafca974ad15e7e996f353c8d9844fe027f8638e6844": { displayName: "Angel Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "70d5fd50f3f28805d9463baae892c12e209d901e87583fb67053549b39e05cec": { displayName: "Grace Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "d04d3621c551a78b91f4b15b2d9d12fe3c8ec1602109401994bded52aff34271": { displayName: "Neng Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "3a91720a55c3241ada5b03867f5ebfa9ad18584bd5a6317599352f632aec536b": { displayName: "Kevin Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "e18975acd9c8040fdf8392ca62cc547eeddb1fdb461586d574d30f73a4cd5171": { displayName: "Eric Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "4944f0cb82ccfeba7ed93daca0ee97074aa8f1120418538aaa950067b251e3c2": { displayName: "Chris Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "e99886c17f8989ed899fac96f7867d54e0fc52d54cbfa1ee13f906843d53cd2a": { displayName: "Jason Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "71b7479a665a461ea39fbf41ef78b381f0bb12688d3d93252936840c48ba3c15": { displayName: "Nancy Lo", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "37e8beb892de63dfb8c89e288bd5d167b2520c5fd5f0829ab0016d2374ed6f36": { displayName: "Tou Lo", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "2211c238eca9fcb85630a8355d5f27fc2f9f7eea27b43aa605b8b387b0ea742b": { displayName: "Champ Lo", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "080cd52eae56534aabd1894ac0ffb79a69bd2f54947accf262bc4f07f301c8c9": { displayName: "Sampson Lo", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "d3f44e7a53e33fdfd47547411c8a925e0405cd88c5e26be91ab354b3d2b8c517": { displayName: "Lusi Yang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "cc8d347f8e212ce56267a6ee6bb5c0f7b76890a06efd6a4f4e15c4cefdcc345c": { displayName: "Juda Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "977d060f3a90aab6adf92b8ee5e3d9bdc36dd6149a28268df4ad6e749a38d7dc": { displayName: "Joyce Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "b5f4753fa613f467cb88550991bdb32469da908d2f20eb5123caf5bae269f8ba": { displayName: "Jayden Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "53169b30c25c72e15eaf12972f78cd84ff86104491cd916e9219f12b8734bfe1": { displayName: "Jacey Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "a6c039955d2c55691217b93cb0fe3faf31135dac65bcecd31866849a24a62f72": { displayName: "Julie Lo", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "23b4c098994b47f647165ee9fa22b966e69cc299c57e1f0f9fe564bd593f1aa6": { displayName: "Jim Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "b345e7d2d763957f2f8af08935cbbed9ffc5a13b67792cf56969a279236c607f": { displayName: "Marsy Phommaly", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "7942729cf9dc8f1acc8b9ef23b7e6278d6323130a48e68dec2ce45f6d3042fdc": { displayName: "Tony Phommaly", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "d71d84e34e6d24dfdd2d9d00b268c992f4039ac04a0c875c14de8a5944d654dd": { displayName: "Sandy Yang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "8be05f42d7d376bf67d1f13b0ed2efc44b4a3f7d56cd81e59280342aa7138184": { displayName: "Joe Yang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "f8459f87bef1df43490c1111555aaee398cd41e7510b11bdb51492becd8061b6": { displayName: "Kelly Yang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "7c4187a0738c6d5cd1e15d4b519aa976237f7a79e64ee23c5b7dd7fc5aaffab9": { displayName: "TJ Yang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "cc10d79d154a884f145440a9c4a24a5e60eac3aab5d8e88258a50928879c91c9": { displayName: "Sara Phomrangsy", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "f639ac4f59793723b52878d6338ee602d89034fc295ac311d6e3fc4db2dfa81e": { displayName: "Addison Phomrangsy", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "c4380391b574b450320415217c3877d3609c818c9eb2ca94fb571819c9143591": { displayName: "Cynthia Jia", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "09928374fe8c5b3fd68e0cd4ff46ddd07caf06c5d1f8b5bda4763ce58e33b08b": { displayName: "Santhosh Narayanan", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "0a3d11a078ec0a445e9dbdbf7a775109bf174ac8c963899f973a758bac9af6c4": { displayName: "Brandon Moua", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "73ca2d937a98ca39228996749a58f29e71125fd7807960214af954786fad2424": { displayName: "Jimmy Vang", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "c88a50e3f74bf54a2121e8574fee62c6f2d6669cda1d087609c9b769ae3fbb6d": { displayName: "Chuyi Yang", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "93b22b00e8ebe503a688400ece0d00ee9a0e0ceba6f960f671d328b8eb030254": { displayName: "Sterling Alic", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "2088f7fd58616fb259407eb8559d2c7a0ac471e5e6bb0e1f6a9ecbd9e1a849fd": { displayName: "Jessica Mi", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "0e109c0d7241df198cefd682dd034d367cd135aa639f0ddbfd30016b1c7b905b": { displayName: "Matthias Philippine", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "83aac5d489e037e2fe5f18cc07de0150511892ca40beebdaad4d90f5d96a40ee": { displayName: "Delali Azamati", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "92b740d375b7d22c6277de86a02df15b35574d7655909269ae32d7b98c04d143": { displayName: "Viviann West", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "15a744f8845febbb25b0f909fd9ae3c2514d557e84b75b704845cdf63b225c6d": { displayName: "Jason West", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "de89054c81b0ad773965507b64d3ac96e1fbc2d5e0349d485e6e56a5daa9a0bb": { displayName: "Austin Ray", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "a150d75ed842dbe7f79a6192f6cf6060c2e8cd47a3f603801dc2fbc43bcc022e": { displayName: "Feng Zhu", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "5f38f7edf3004d931737e43ec71075fde0da78bcc48fdcfb1f0c1b9a047aaf41": { displayName: "Ning Wang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "08b8030e66068f427bdce647a2df6d0551832cbc56c51cf131f439b1fe70a95e": { displayName: "Kevin Zhong", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "a8e06725e1f2752e11fbcd1e361a331984b4d7ba31f7ac464870f0cd7b13ceac": { displayName: "Chelsey Zhu", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "df4ddad0bac72d3e921923b20bd7e02fa110ffe1cd3c1d8e778c5db342546dc1": { displayName: "Jeffrey Chang", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "9b4c98a524df1ffa292c81362b0c9685aa3cd4c6c7ca09bbb8717803673c21a6": { displayName: "John Pace", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "7f70272f37b92f2af6bb4cbde3ee4f8ce8b2607f8337fc232ea9d577fbfc5643": { displayName: "Rebecca Christensen", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "b5aedefbc5614b4c9a95e8dd2d77cb512a5df34931a1c03b3451791658751b51": { displayName: "Anh Le", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "20611223691d83d6a2827e530564c97d684d3eb5fec5fa199deb881a93ae2dbc": { displayName: "Dan Zhang", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "559c45a4bbbcdcf71691c2baa15237a4a5abfd7df73fd9988aecaff4644e17ff": { displayName: "Leanne Jeong", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "7231ec0ff77338c32a447619c24709fff5cdf204119fe688d18574b7e46e8751": { displayName: "Michelle Zhuang", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "fd3600e7e004a5535182c04b9a8f29a34425216bbfa5212713725e93dd8904bc": { displayName: "Will Stevens", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "6c18f53e7af421cef904b1bc54283257e6fd3ae692b714f384620c9cc31111e5": { displayName: "Phillip Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "423a976957fe417eed574af0c4709c842c61f1ee257f41526d8a99fd6fb71511": { displayName: "Michelle Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "aa10c53e9be23a32605790c75884087d0fb3098ff8c1da1c445ee9b21742d5d5": { displayName: "Yifen Wang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "134eb23aa7369e4ac5f432ed1e89c142f7e43ad5e06e7915b14bd8508d252f5b": { displayName: "Min Lu", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "a9b3561fa57fec9fc5fbdebb8c9eb74dfd3600b2e4a705770918af9eb855812f": { displayName: "Eric Wang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "500133d7ff8f3456a17b46510fdc30100f231d4f0e43ce17e1bc97d52bb7d565": { displayName: "Vicki Wang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "e7eb05146559ef1d62e88f484e716c4f1c6831055fbb790e5044feee95ce9819": { displayName: "Pat Soukhathivong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "727eff06c8b574d5cb0430526872720a83f2c00330689f6e4021c781e8ef397b": { displayName: "Jenny Soukhathivong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "a33161c5644b5226238cc28b8de922eda07245e62bf2e4fa54c0c5074ad0311f": { displayName: "Peter Wang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "37e3d77095f562668a31e4b29d461df894db05465a3c7565d3e1f0f15add4d29": { displayName: "Maria Santos", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "8e60ab6de0188c48b2c52fde75c1a63d813f25e104b8ffe3c598fde482dcb673": { displayName: "Kerrigan Wang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "1275b14c4464b395a8863b56f2f446bbe65ccab0a2ca2bbb792588c53db28dd8": { displayName: "Dafang Zhang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "227f386f9d4da16c4ee13d8cb37d301691763249b12ff27068c5f96d03e25dd2": { displayName: "Jia Zhu", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "998543d09bd5d2a690654b6c7a217cad0604b77c35af9c9dcaf454ef79deb7e2": { displayName: "Remy Zhang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "7b9947420c9d43f016aff9b3ac427dea6cc96c4928321721113c58e776997b39": { displayName: "Phoebe Zhang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "209191b4863461f0c64d8d9b4fb698d275998042403c6c4f3f6073a52a7bc618": { displayName: "Brett McLean", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "5301d9ed3a6beb3f668758ded985efb4d9f186b5a384e2136a0ae9c9438996b9": { displayName: "Katelyn Lee McLean", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "7eb2f5e57b4b8339cac53c9b353f0491b6909c14e4046b685f0bb128499013b2": { displayName: "Anish Deshpande", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "4125fa28c67f3779b6faf35cc302110ce4a73705e81a4b7dd6a1dbaceb4d69ef": { displayName: "Jailia Yang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "d6274ef7ba581408cedeebde6acb481ca4e35199f49621c1bdb574242c1772ad": { displayName: "Laevie Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "3240bce9915bc8e1566890cbb369f5137eb887f9b3b3cc00754bc6f48228a947": { displayName: "Charles Tsao", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "daf5c05332d08b77692aa20a6d63e3ee400069e60814f27b97ee325967752706": { displayName: "Claire Mai", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "b215dce2f9640e39ef55afc1b908e797e40dfd861b6486202c5478df065f1560": { displayName: "Mee Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "2a5e494e6b7742e3fd286dc9cca867779b56b0f976b8b2e613789c8d9b44da72": { displayName: "Karocky Phouangmalay", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "294442a44cc186863e75e2df1f541816f8603fae4614e0c7021cf0cddc391397": { displayName: "Kaylee Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "b3dcdd1cb4e876c9e817c6b4f2da56d537208e55966de03323ac2f67c5458f38": { displayName: "Justin Moua", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "3c93477d4a97e4fdc18d94db02287f1952f89c6f60523bdaf58f39ac3624f500": { displayName: "Seng Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "99d337dd3b49c1ce9c08e494193368c7aadbe4f82d45d37001e7364cb2d0f6d7": { displayName: "Pang Xiong", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "094bf2594d6653ab40a3f5e23c451dd6e956d94663b0baa1097ba09a811cc3fd": { displayName: "Shayla Kalac", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "1186b5ef65dd2c1ed06136a6b3a804fd27d18128bcc6a4829e20444013ebd464": { displayName: "Clay Harden", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "3b198a4c322ea400dde46d3e9986dcb3c605bd14454e34fb0cbf429fb52b95ad": { displayName: "Chloe Harris", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "95f3c29a4212ea0f17a785a73cec97af140ff553a4d446f4a09f11ad0f3f9fa3": { displayName: "Khara Bang", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "5518d3c9e4541d63e7accac1dccedec4c04d0db2b146bad1b824daddc2f811f1": { displayName: "Soly Lee", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "9974dd3ffc30237140f2f2b278332428e2e025072b94287486e51e9b66f8ea36": { displayName: "Sharan Satish Kumar", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "15747472f4f715a01df3a19dbfbb8f8e563a714736308b3673110650974cbf32": { displayName: "Nikki Kanakadandila", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "c9dfe3f304f46efdf3f9155d60cee83e6266ef0bd74df8da5e30d8fa52235220": { displayName: "Seong Kim", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "1b0069687388711b857e04c9123c6abb36bd0a6cd87a7f7769c067ffac013522": { displayName: "Kelly Kim", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "e0d56c17cfc6288c2d92f5fbac21d46ccb19f68e2e388fc1eed0b54361624991": { displayName: "Kyle Tu", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "f8aa44b4cafa1d336179564b0caff73a91ebac4f576248cec85e6ab2319d4c8a": { displayName: "Rachel Lee", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "816acd2814cce7957d962c7f6ca0be8e9dd7f206d8fc11d861a402b06f7f109c": { displayName: "Matthew Zhang", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "3b86a99fd76acc9751c455d62bd9eb050512fbd22186e410780ad5fa64886a4b": { displayName: "Ellen Qian", welcomeParty: true, rsvpDate: "July 25, 2026" },
+      "a5990f86910f8cee0d7b3344dc4f644cec617e6be6daa941af04eed59162358d": { displayName: "Weijun Wang", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "27ea0c02ab9e1711eb3722213f7300afdc005f5f55c96b42a41c0bf73c18f9eb": { displayName: "Yiping Lu", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "cfa5ffd2a34c9d39d87a9493fa5221c78dab1fa17841e477ad905907934d77bc": { displayName: "Ping Du", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "e1c6999833c3aadd61586615eb9cfdebc11c029ae8438f39c0c6fc4d226139d0": { displayName: "Wei Guo", welcomeParty: false, rsvpDate: "July 25, 2026" },
+      "7b496cabab5bc6cc8c2e9040f5d5d36f790f9d7589b4cd8c6de3b5eb58f0821e": { displayName: "Mao Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "ee30915e672b45e35597d5df638dd5e18dc0f7e6b1996f80ed09114878ed2f5e": { displayName: "Chantha Orm", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "427c0e11712bcf75a4d1227080aa00f804096070644a38fee1956338fb6b5ec7": { displayName: "Xang Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "04a674622912a1913745773387e9693c3203c9d68634a80bee0f1f8235f77647": { displayName: "Txiv Txawj Nchai Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "bcb4f3627675b523aae092b09d6b3a496880fbf5f247a63d435bcb5d52157288": { displayName: "Ntxawm Txawj Nchai Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "7888b5b0200880d5088314bd3f976815c722d92b88c80eb2612af4bcabbe620e": { displayName: "Christopher Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "d8e27be2299f4d5804a9fe1940b95cf61b4d8483b2a937002e04f23a009ddb06": { displayName: "Shany Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "335d5ee4448d3d098cf01d6cd3c442de63a41d8aa69088f1c17eea5ba67415d5": { displayName: "Num Tuam Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "41f5db5e2b3441a2131c0e505f700657a1c1087946c7f94556c9932dd22f0968": { displayName: "Manilla Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "91458d9da35c8500eb887f6d777931b8ec6cbaae828f21c32e39d1f9c87deea2": { displayName: "Zaam Teeb Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "6e65e9fe761d39c573a50fe052848f01b8a804ffccb1237fe516c4f5a69054b0": { displayName: "Ntsuab Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "11b4e08887c3926b52cda6ade897474364c0bc226786a354d402c833e996e473": { displayName: "Nkag Leej Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "314bb239c170cd130addd88ea405427b9aab406b16c62b86886d64590946f1d6": { displayName: "Beverly Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "337ad269628e99eaf9ee7a4e062a65eab3773463583b07a7d5eb09399744a374": { displayName: "Txooj Cawv Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "4f11a9a015ca505b9542125d272c5f699955179fb22a05925cd32cad2f59a3ff": { displayName: "Kia Yang", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "a00d9e79008f68d62a5591d27ae9bd11d5661ec34fcf94dfd98e38587816f5c8": { displayName: "Khue Xiong", welcomeParty: false, rsvpDate: "June 12, 2026" },
+      "59341dd9c83a2f6da8eb3791825330aa953db31ea0b3fa1f4da0c88a7ef495c5": { displayName: "Mai Yeng Thao", welcomeParty: false, rsvpDate: "June 12, 2026" },
     };
 
     const SATURDAY_EVENTS = [
