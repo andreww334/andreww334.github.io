@@ -812,8 +812,10 @@
       }
 
       .hero-names {
+        font-size: clamp(2rem, 11vw, 4rem);  /* ← mobile name size lever */
         margin-bottom: 2.5rem;
         justify-content: center;
+        white-space: nowrap;     /* keep name on one line so margin adjusts smoothly */
       }
 
       .hero-initial {
@@ -823,7 +825,12 @@
       }
 
       .hero-rest {
-        margin-left: -5em;     /* ← mobile gap fix: increase magnitude to close further */
+        margin-left: 0.07em;     /* ← mobile gap fix: more negative = R closer to "achael"; less negative = more space */
+      }
+
+      #password-gate .gate-names {
+        font-size: clamp(2rem, 11vw, 4rem);
+        white-space: nowrap;
       }
 
       .hero-location {
@@ -868,8 +875,14 @@
       }
 
       /* Accommodations */
+      #accommodations {
+        justify-content: center;
+        padding: 6rem 1.2rem;
+      }
+
       .accommodations-inner {
         padding: 2rem 1.5rem;
+        width: 100%;
       }
 
       .hotels {
