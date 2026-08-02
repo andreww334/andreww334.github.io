@@ -727,22 +727,24 @@
     .flower-card-content {
       position: relative;
       z-index: 1;
+      max-width: 300px;      /* ← keep text within the flower's white center */
+      text-align: center;
     }
 
     .flower-card h2 {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: 2.2rem;
+      font-size: 2rem;
       letter-spacing: 0.2em;
       color: var(--mauve);
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.9rem;
     }
 
     .flower-card p {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      line-height: 1.9;
+      line-height: 1.7;
       color: var(--mauve);
     }
 
@@ -1073,13 +1075,6 @@
       <div class="schedule-welcome" id="schedule-welcome"></div>
       <div class="schedule-events-label">Your Events</div>
       <div class="event-cards" id="event-cards"></div>
-      <a href="#rsvp" class="rsvp-card" id="rsvp-card" style="display:none;">
-        <div style="flex:1;">
-          <div class="rsvp-card-label">RSVP By</div>
-          <div class="rsvp-card-date" id="rsvp-date"></div>
-        </div>
-        <div class="rsvp-card-arrow">→</div>
-      </a>
     </div>
   </section>
 
@@ -1130,11 +1125,9 @@
       <div class="faq-item">
         <h3>When should I RSVP by?</h3>
         <p>
-          Please respond by the date noted in your <a href="#schedule">schedule</a>, as we are unable
-          to accept late responses after that cutoff. Whether it's a yes or a no,
-          hearing back from everyone helps us finalize headcount, seating, and
-          catering, so please don't forget to respond either way. Thank you for
-          understanding!
+          Thank you to everyone who responded! We have finalized our guest count
+          with our vendors. If you have any questions about your RSVP, please
+          reach out to Rachael or Andrew directly.
         </p>
       </div>
       <div class="faq-item">
@@ -1155,8 +1148,10 @@
       <div class="faq-item">
         <h3>What should I wear?</h3>
         <p>
-          We kindly ask guests to wear formal attire. For men, this means a suit
-          and tie; for women, a floor-length or mid-length dress. Please keep the
+          We kindly ask guests to wear formal attire. For men, this means a dark
+          suit and tie; for women, a floor-length or mid-length dress. As a
+          courtesy to the couple, please avoid white, ivory, or cream dresses or
+          suits (a white dress shirt is perfectly fine!). Please also keep the
           outdoor setting in mind when choosing your footwear.
         </p>
       </div>
@@ -1196,9 +1191,8 @@
       <div class="flower-card-content">
         <h2>RSVP</h2>
         <p>
-          Please let us know if you can<br>
-          join us by visiting<br>
-          <a href="https://withjoy.com/rachael-and-andrew-sep-26/rsvp" target="_blank">OUR RSVP PAGE</a>.
+          Our RSVPs are now closed—thank you so much! Please reach out
+          to Rachael or Andrew with any questions.
         </p>
       </div>
     </div>
@@ -1492,10 +1486,6 @@
 
       document.getElementById("schedule-welcome").textContent = "Welcome, " + guest.displayName;
       document.getElementById("event-cards").innerHTML = events.map(makeCard).join("");
-
-      const rsvpCard = document.getElementById("rsvp-card");
-      document.getElementById("rsvp-date").textContent = guest.rsvpDate;
-      rsvpCard.style.display = "flex";
 
       results.style.display = "block";
     }
